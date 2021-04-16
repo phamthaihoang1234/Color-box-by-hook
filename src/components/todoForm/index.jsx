@@ -32,6 +32,10 @@ function TodoForm(props) {
 
          onSubmit(formValues);
 
+
+         // add set value
+         setValue('');
+
         }
     
     return (
