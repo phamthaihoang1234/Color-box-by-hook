@@ -21,13 +21,25 @@ function App() {
       setTodoList(newTodoList);
   }
 
+  function handleTodoFormSubmit(formValues) {
+     console.log(formValues);
+    const newTodoList = [...todoList];
+    const newToDo = {
+      // set id cho các children trong list để nó có index unique
+        id : todoList.length +1,
+        ...formValues
+    };
+     newTodoList.push(newToDo);
+     setTodoList(newTodoList);
+
+  }
 
 
   return (
     <div className="App">
       <h1>React hooks - TodoList</h1>
           <TodoList todos={todoList} onTodoClick= {handleTodoClick} />
-          <TodoForm/>
+          <TodoForm onSubmit = {handleTodoFormSubmit}/>
     </div>
   );
 }

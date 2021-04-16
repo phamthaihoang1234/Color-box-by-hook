@@ -23,17 +23,23 @@ function TodoForm(props) {
     
     // chặn reload khi click submit
     function handleSubmit(e) {
-        e.prevenDefault();
-    }
+        e.preventDefault();
+
+        if(!onSubmit) return;
+         const formValues = {
+             title: value
+         }
+
+         onSubmit(formValues);
+
+        }
     
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input type="text" value={value} 
             onChange={handleValueChange}
             
             />    
-        
-        
         </form>
     );
 }
