@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import ColorBox from './components/ColorBox';
+import TodoForm from './components/todoForm';
 import TodoList from './components/todoList';
 
 
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
       <h1>React hooks - TodoList</h1>
           <TodoList todos={todoList} onTodoClick= {handleTodoClick} />
-      
+          <TodoForm/>
     </div>
   );
 }

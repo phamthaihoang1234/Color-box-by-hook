@@ -17,7 +17,6 @@ TodoList.defaultProps = {
 function TodoList(props) {
     
         const {todos, onTodoClick} = props;
-
         function handleClick(todo) {
             if(onTodoClick){
                 onTodoClick(todo);
