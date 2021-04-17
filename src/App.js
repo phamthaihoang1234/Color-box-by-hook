@@ -28,7 +28,8 @@ function App() {
         setPostList(data);
         
       }
-      fetchPostList();
+      // errol gọi function trong block của chính nó
+      // fetchPostList();
   
   }, []);
 
