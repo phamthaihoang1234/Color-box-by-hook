@@ -16,11 +16,12 @@ function formatData(date) {
 function Clock(props) {
      const [timeString, setTimeString] = useState('');
     
+     
 
      //  mỗi lần sau mỗi giây thì nó cập nhật cái timeString
     useEffect(() => {
         // sau mỗi giây nó sẽ làm một cái gì đó
-        setInterval(() =>{
+        const clockInterval = setInterval(() =>{
             // lấy thời gian hiện tại
             const now = new Date();
            
@@ -29,25 +30,18 @@ function Clock(props) {
             
             setTimeString(newTimeString);
         }, 1000)
+
+        return() => {
+            // cleanup
+            console.log('clock cleanup')
+            clearInterval(clockInterval);
+    
+        }
     }, [])
 
-
-    // //  mỗi lần sau mỗi giây thì nó cập nhật cái timeString
-    // useEffect(() => {
-    //     // sau mỗi giây nó sẽ làm một cái gì đó
-    //     setInterval(() =>{
-    //         // lấy thời gian hiện tại
-
-    //         const now = new Date();
-    //         // biến một object date thành chuỗi giờ phút giây
-
-    //         const newTimeString = formatData(now);
-            
-    //         setTimeString(newTimeString);
-    //     }, 1000)
-    // }, [])
     
-    
+
+
     return (
         <p style={{fontSize: '42px'}}>{timeString}</p>
     );

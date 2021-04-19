@@ -97,15 +97,22 @@ function App() {
       title_like: newFilters.searchTerm,
     })
   }
+  
+  const [showClock, setShowClock] = useState(true);
 
  
   return (
     <div className="App">
-      <h1>React hooks - PostList</h1>
+      <h1>React hooks - Clock</h1>
+      <PostFitersForm onSubmit={handleFiltersChange}/>
+      
+      {showClock && <Clock/>}
+      <button onClick={() =>setShowClock(!showClock)}>Hide clock</button>
+
           {/* <TodoList todos={todoList} onTodoClick= {handleTodoClick} />
           <TodoForm onSubmit = {handleTodoFormSubmit}/> */}
-          <Clock/>
-          <PostFitersForm onSubmit={handleFiltersChange}/>
+          
+          
           <PostList posts={postList}/>
           <Pagination 
               pagination={pagination}
