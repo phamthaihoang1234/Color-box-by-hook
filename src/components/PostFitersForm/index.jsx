@@ -33,14 +33,10 @@ function PostFitersForm(props) {
             };
             onSubmit(formValues);
         }, 300);
+}
 
 
-        
-
-        
-
-
-    }
+    
     return (
         <form>
             <input 

@@ -9,6 +9,7 @@ import queryString from 'query-string';
 import PostFitersForm from './components/PostFitersForm';
 import Clock from './components/Clock';
 import BetterClock from './components/BetterClock';
+import MagicBox from './components/MagicBox';
 
 function App() {
   const [todoList,setTodoList] = useState([
@@ -105,7 +106,10 @@ function App() {
   return (
     <div className="App">
       <h1>React hooks - Clock</h1>
-      <PostFitersForm onSubmit={handleFiltersChange}/>
+      
+      <MagicBox/>
+      
+      <PostFitersForm onSubmit={handleFiltersChange} />
       
       {showClock && <Clock/>}
       <button onClick={() =>setShowClock(!showClock)}>Hide clock</button>
