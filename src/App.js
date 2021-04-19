@@ -7,6 +7,7 @@ import TodoForm from './components/todoForm';
 import TodoList from './components/todoList';
 import queryString from 'query-string';
 import PostFitersForm from './components/PostFitersForm';
+import Clock from './components/Clock';
 
 function App() {
   const [todoList,setTodoList] = useState([
@@ -103,7 +104,7 @@ function App() {
       <h1>React hooks - PostList</h1>
           {/* <TodoList todos={todoList} onTodoClick= {handleTodoClick} />
           <TodoForm onSubmit = {handleTodoFormSubmit}/> */}
-
+          <Clock/>
           <PostFitersForm onSubmit={handleFiltersChange}/>
           <PostList posts={postList}/>
           <Pagination 
