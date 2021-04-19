@@ -8,6 +8,7 @@ import TodoList from './components/todoList';
 import queryString from 'query-string';
 import PostFitersForm from './components/PostFitersForm';
 import Clock from './components/Clock';
+import BetterClock from './components/BetterClock';
 
 function App() {
   const [todoList,setTodoList] = useState([
@@ -50,7 +51,7 @@ function App() {
           const response = await fetch(requestUrl);
           const responseJSON = await response.json();
           console.log({responseJSON});
-          console.log('hoang');
+          
           const {data, pagination} = responseJSON;
   
           setPostList(data);
@@ -112,7 +113,7 @@ function App() {
           {/* <TodoList todos={todoList} onTodoClick= {handleTodoClick} />
           <TodoForm onSubmit = {handleTodoFormSubmit}/> */}
           
-          
+          <BetterClock/>
           <PostList posts={postList}/>
           <Pagination 
               pagination={pagination}

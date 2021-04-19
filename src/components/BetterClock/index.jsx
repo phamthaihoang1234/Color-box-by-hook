@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import useClock from '../../hooks/useClock';
 
 
-Clock.propTypes = {};
 
-function Clock() {
+
+function BetterClock() {
      const {timeString} = useClock();
 
 
@@ -15,4 +15,4 @@ function Clock() {
     );
 }
 
-export default Clock;
+export default BetterClock;
